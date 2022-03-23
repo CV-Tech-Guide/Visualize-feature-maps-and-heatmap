@@ -1,7 +1,8 @@
->   **本文来自公众号CV技术指南，欢迎用于个人学习，严禁用于商业行为。 **
->   
->   **欢迎关注公众号CV技术指南，专注于计算机视觉的技术总结、最新技术跟踪、经典论文解读、CV招聘信息。**
->   
+**本文来自公众号CV技术指南，欢迎用于个人学习，严禁用于商业行为。**
+ 
+**欢迎关注公众号CV技术指南，专注于计算机视觉的技术总结、最新技术跟踪、经典论文解读、CV招聘信息。**
+
+
 >   **前言** 本文给大家分享一份我用的特征图可视化代码。
 
 
@@ -231,3 +232,6 @@ visualize_feature_map(output, save_path, "drone", BI)
 ------
 
 ![图片](https://mmbiz.qpic.cn/mmbiz_png/V2E1ll6kaTVqAwbeVAGXfmmlBRwZcbMXLoBIwhvU8SkrFicuricQQZy4CwG5DfqF4ff16wNUNuNSNSicIG2l6icDbg/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
+**欢迎关注公众号CV技术指南，专注于计算机视觉的技术总结、最新技术跟踪、经典论文解读、CV招聘信息。**
