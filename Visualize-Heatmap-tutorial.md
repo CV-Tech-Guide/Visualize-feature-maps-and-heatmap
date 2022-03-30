@@ -2,7 +2,7 @@
 >
 >   本文介绍了CAM、GradCAM的原理和缺陷，介绍了如何使用GradCAM算法实现热力图可视化，介绍了目标检测、语义分割、transformer模型等其它类型任务的热力图可视化。
 
-本文原文：《一份热力图可视化代码使用教程》
+本文原文：《[一份热力图可视化代码使用教程](https://mp.weixin.qq.com/s?__biz=MzkyMDE2OTA3Mw==&mid=2247494271&idx=1&sn=6fb284402bc9aad6e9d578e385b59aad&chksm=c1945561f6e3dc77184450d7ea6c1e71e9d3083946c459298950c1a3d4c900d7184a5a38c440&token=214385380&lang=zh_CN#rd)》
 
 #### 1. 热力图可视化方法的原理
 
