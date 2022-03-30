@@ -41,7 +41,7 @@ CAM论文：Learning Deep Features for Discriminative Localization
 
 CAM的原理是取出全连接层中得到类别C的概率的那一维权值，用W表示。然后对GAP前的feature map进行加权求和，由于此时feature map不是原图像大小，在加权求和后还需要进行上采样，即可得到Class Activation Map。
 
-<img src="F:\Desktop\CAM.png" alt="CAM" style="zoom:50%;" />
+![image](https://github.com/CV-Tech-Guide/Visualize-feature-maps-and-heatmap/blob/main/images/CAM.png)
 
 CAM有个很致命的缺陷，它的结构是由CNN + GAP + FC + Softmax组成。也就是说如果想要可视化某个现有的模型，对于没有GAP的模型来说需要修改原模型结构，并重新训练，相当麻烦，且如果模型很大，在修改后重新训练不一定能达到原效果，可视化也就没有意义了。
 
