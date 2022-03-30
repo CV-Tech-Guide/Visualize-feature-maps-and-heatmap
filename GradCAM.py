@@ -134,9 +134,6 @@ class GradCAM:
 
     def __call__(self, input_tensor, target_category=None):
 
-        if self.cuda:
-            input_tensor = input_tensor.cuda()
-
         # 正向传播得到网络输出logits(未经过softmax)
         output = self.activations_and_grads(input_tensor)
         if isinstance(target_category, int):
@@ -206,33 +203,6 @@ def show_cam_on_image(img: np.ndarray,
     return np.uint8(255 * cam)
 
 
-def center_crop_img(img: np.ndarray, size: int):
-    h, w, c = img.shape
-
-    if w == h == size:
-        return img
-
-    if w < h:
-        ratio = size / w
-        new_w = size
-        new_h = int(h * ratio)
-    else:
-        ratio = size / h
-        new_h = size
-        new_w = int(w * ratio)
-
-    img = cv2.resize(img, dsize=(new_w, new_h))
-
-    if new_w == size:
-        h = (new_h - size) // 2
-        img = img[h: h+size]
-    else:
-        w = (new_w - size) // 2
-        img = img[:, w: w+size]
-
-    return img
-
-
 def image_proprecess(img_path):
     img = Image.open(img_path)
     data_transforms = transforms.Compose([
@@ -247,14 +217,14 @@ def image_proprecess(img_path):
 
 def Init_Setting():
     model = models.mobilenet_v3_large(pretrained=True)
-    model.load_state_dict(torch.load('model.pth'))
+    #model.load_state_dict(torch.load('model.pth'))
     model = model.cuda().eval()
     return model
 
 
 if __name__ == "__main__":
     imgs_path = "path/to/image.png"
-    model = Init_Setting(120)
+    model = Init_Setting()
     target_layers = [model.features[-1]]
     img, data = image_proprecess(imgs_path)
 
