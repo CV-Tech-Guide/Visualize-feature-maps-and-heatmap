@@ -60,17 +60,11 @@ class ActivationsAndGradients:
 
 
 class GradCAM:
-    def __init__(self,
-                 model,
-                 target_layers,
-                 reshape_transform=None,
-                 use_cuda=False):
+    def __init__(self, model, target_layers, reshape_transform=None):
         self.model = model.eval()
         self.target_layers = target_layers
         self.reshape_transform = reshape_transform
         self.cuda = use_cuda
-        if self.cuda:
-            self.model = model.cuda()
         self.activations_and_grads = ActivationsAndGradients(
             self.model, target_layers, reshape_transform)
 
@@ -264,7 +258,7 @@ if __name__ == "__main__":
     target_layers = [model.features[-1]]
     img, data = image_proprecess(imgs_path)
 
-    cam = GradCAM(model=model, target_layers=target_layers, use_cuda=True)
+    cam = GradCAM(model=model, target_layers=target_layers)
     target_category = None
 
     data = data.cuda()
