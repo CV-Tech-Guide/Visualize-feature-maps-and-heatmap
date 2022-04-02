@@ -64,7 +64,6 @@ class GradCAM:
         self.model = model.eval()
         self.target_layers = target_layers
         self.reshape_transform = reshape_transform
-        self.cuda = use_cuda
         self.activations_and_grads = ActivationsAndGradients(
             self.model, target_layers, reshape_transform)
 
@@ -241,4 +240,4 @@ if __name__ == "__main__":
     plt.xticks()
     plt.yticks()
     plt.axis('off')
-    plt.savefig("/path/to/gradcam_image.jpg")
+    plt.savefig("path/to/gradcam_image.jpg")
